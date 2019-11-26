@@ -60,7 +60,6 @@ variable "map_users" {
     groups   = list(string)
   }))
 
-  # default none - shown for example only
   default = []
 }
 
