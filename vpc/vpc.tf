@@ -24,9 +24,16 @@ module "vpc" {
 
   public_subnet_tags = {
     "kubernetes.io/role/elb"  = ""
-}
+   "kubernetes.io/cluster/${var.cluster_name}" = "shared"
+ }
+
+  private_subnet_tags = {
+    #"kubernetes.io/role/elb"  = ""
+   "kubernetes.io/cluster/${var.cluster_name}" = "shared"
+ }
 
   tags = {
     Terraform = "true"
   }
-}
+
+  }
