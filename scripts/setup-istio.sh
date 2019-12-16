@@ -31,7 +31,7 @@ fi
 
 echo "Loading istio to the cluster" 
 
-./istio-1.4.0/bin/istioctl manifest apply --set profile=demo
+./istio-1.4.0/bin/istioctl manifest apply --set profile=default
 
 echo "Checking " 
 

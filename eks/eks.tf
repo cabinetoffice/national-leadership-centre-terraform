@@ -1,5 +1,7 @@
 module "eks" {
-  source       = "terraform-aws-modules/eks/aws"
+  # source       = "terraform-aws-modules/eks/aws"
+  source = "git@github.com:terraform-aws-modules/terraform-aws-eks.git"
+
 
   cluster_name = var.cluster_name
   subnets      = var.public_subnets
@@ -25,6 +27,7 @@ module "eks" {
     }
   ]
 
+  manage_aws_auth                      = var.manage_aws_auth
   map_roles                            = var.map_roles
   map_users                            = var.map_users
   map_accounts                         = var.map_accounts

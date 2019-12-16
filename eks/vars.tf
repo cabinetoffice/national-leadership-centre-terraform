@@ -35,6 +35,10 @@ variable "public_subnets" {
    type = list(string)
 }
 
+variable "manage_aws_auth" {
+  description = "Whether to apply the aws-auth configmap file."
+}
+
 variable "map_accounts" {
   description = "Additional AWS account numbers to add to the aws-auth configmap."
   type        = list(string)

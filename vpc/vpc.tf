@@ -22,6 +22,10 @@ module "vpc" {
   reuse_nat_ips       = true                    
   external_nat_ip_ids = aws_eip.nat.*.id
 
+  public_subnet_tags = {
+    "kubernetes.io/role/elb"  = ""
+}
+
   tags = {
     Terraform = "true"
   }
