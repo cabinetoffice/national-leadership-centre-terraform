@@ -5,8 +5,8 @@ resource "aws_db_instance" "connect" {
   engine_version      = ""
   instance_class      = var.database_instance_type
   identifier          = "connect"
-  username            = "testtest1"
-  password            = "testtest1"
+  username            = var.database_master_username
+  password            = var.database_master_password
   publicly_accessible = false
 
   db_subnet_group_name      = var.database_subnet_group

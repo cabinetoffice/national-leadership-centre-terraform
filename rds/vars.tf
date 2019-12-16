@@ -45,8 +45,16 @@ variable "multi_az" {
   type        = string
 }
 
-
 variable "db_instance_name" {
   description = "What to call the db "
+  type        = string
+}
+
+variable "db_master_username" {
+  description = "admin username for db"
+  type        = string
+}
+variable "db_master_password" {
+  description = "admin password for db"
   type        = string
 }
