@@ -19,21 +19,22 @@ module "vpc" {
   single_nat_gateway   = false
   enable_dns_hostnames = true
   # https://github.com/terraform-aws-modules/terraform-aws-vpc#external-nat-gateway-ips
-  reuse_nat_ips       = true                    
+  reuse_nat_ips       = true
   external_nat_ip_ids = aws_eip.nat.*.id
 
   public_subnet_tags = {
-    "kubernetes.io/role/elb"  = ""
-   "kubernetes.io/cluster/${var.cluster_name}" = "shared"
- }
+    "kubernetes.io/role/elb"                    = ""
+    "kubernetes.io/cluster/${var.cluster_name}" = "shared"
+  }
 
   private_subnet_tags = {
-    #"kubernetes.io/role/elb"  = ""
-   "kubernetes.io/cluster/${var.cluster_name}" = "shared"
- }
+    # "kubernetes.io/role/elb"  = ""
+    "kubernetes.io/cluster/${var.cluster_name}" = "shared"
+  }
 
   tags = {
     Terraform = "true"
+    # "kubernetes.io/cluster/${var.cluster_name}" = "shared" 
   }
 
-  }
+}

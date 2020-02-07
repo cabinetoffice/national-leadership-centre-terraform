@@ -31,10 +31,34 @@ output "database_subnet_cidr_blocks" {
   value       = module.vpc.database_subnets_cidr_blocks
 }
 
+output "private_subnet_cidr_blocks" {
+  description = "Private subnet blocks"
+  value       = module.vpc.private_subnets_cidr_blocks
+}
+
+output "public_subnet_cidr_blocks" {
+  description = "Public subnet blocks"
+  value       = module.vpc.public_subnets_cidr_blocks
+}
+
 # NAT gateways
 output "nat_public_ips" {
   description = "List of public Elastic IPs created for AWS NAT Gateway"
   value       = module.vpc.nat_public_ips
 }
+
+# Vault key
+output "vault_auto_unseal_key_id" {
+  description = "Key ID for auto unseal KMS key"
+  value       = "${aws_kms_key.vault-auto-unseal-key.key_id}"
+}
+output "vault_auto_unseal_key_arn" {
+  description = "ARN for auto unseal KMS key"
+  value       = "${aws_kms_key.vault-auto-unseal-key.arn}"
+}
+
+
+
+
 
 

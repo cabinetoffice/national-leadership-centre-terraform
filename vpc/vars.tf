@@ -2,11 +2,11 @@
 # All the variables used by the various tf files.
 #
 variable "vpc_name" {
-   description = "what to call the VPC - e.g. eu-west-2-vpc-1"
+  description = "what to call the VPC - e.g. eu-west-2-vpc-1"
 }
 
 variable "cluster_name" {
-   description = "what we will call the EKS cluster "
+  description = "what we will call the EKS cluster "
 }
 
 variable "aws_region" {
