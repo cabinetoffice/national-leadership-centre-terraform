@@ -36,13 +36,44 @@ EOF
 
 
 ## TODO - can we limit the s3:* here - although the drupal docs say use s3:* :(
+## TODO - surely we can iterate here on buckets  ?
+
+resource "aws_iam_policy" "connect-s3fs-staging-bucket-rw-access" {
+  name        = "connect-s3fs-staging-bucket-rw-access"
+  path        = "/"
+  description = "Grants read write access to s3fs bucket nlc-static-staging"
+
+  policy = <<EOF
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Action": [
+                "s3:ListAllMyBuckets"
+            ],
+            "Resource": "arn:aws:s3:::*"
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "s3:*"
+            ],
+            "Resource": [
+                "arn:aws:s3:::nlc-static-staging",
+                "arn:aws:s3:::nlc-static-staging/*"
+            ]
+        }
+    ]
+}
+EOF
+}
 
 resource "aws_iam_policy" "connect-s3fs-bucket-rw-access" {
   name        = "connect-s3fs-bucket-rw-access"
   path        = "/"
-  description = "Grants read write access to s3fs buckets. Is elsewhere applied to the EKS nodes"
+  description = "Grants read write access to s3fs bucket nlc-static-prod"
 
-  # yuk
   policy = <<EOF
 {
     "Version": "2012-10-17",
@@ -67,6 +98,7 @@ resource "aws_iam_policy" "connect-s3fs-bucket-rw-access" {
     ]
 }
 EOF
+}
 
 resource "aws_iam_policy" "es-domain-node-access-es-connect" {
   name        = "es-domain-node-access-es-connect"

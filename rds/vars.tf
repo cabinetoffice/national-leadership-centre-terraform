@@ -1,9 +1,9 @@
 #
 # All the variables used by the various tf files.
 #
-variable "vpc_name" {
-  description = "which VPC - e.g. eu-west-2-vpc-1"
-}
+#variable "vpc_name" {
+#  description = "which VPC - e.g. eu-west-2-vpc-1"
+#}
 
 variable "vpc_id" {
   description = "VPC ID "
@@ -13,7 +13,17 @@ variable "aws_region" {
   description = "The AWS region to deploy to (e.g. eu-west-2)"
 }
 
+variable "private_subnet_cidr_blocks" {
+  type = list(string)
+}
 
+variable "public_subnet_cidr_blocks" {
+  type = list(string)
+}
+
+variable "database_subnet_cidr_blocks" {
+  type = list(string)
+}
 variable "private_subnets" {
   type = list(string)
 }
@@ -26,12 +36,20 @@ variable "database_subnets" {
   type = list(string)
 }
 
-variable "database_subnet_group" {
+#variable "database_subnet_group" {
+#  type = string
+#}
+
+variable "major_engine_version" {
   type = string
 }
 
-variable "database_instance_type" {
-  description = "What instance type to use for the db"
+variable "engine_version" {
+  type = string
+}
+
+variable "database_instance_class" {
+  description = "What instance class to use for the db"
   type        = string
 }
 
@@ -45,8 +63,12 @@ variable "multi_az" {
   type        = string
 }
 
-variable "db_instance_name" {
-  description = "What to call the db "
+variable "database_identifier" {
+  description = "What to call the db instance identifier - e.g. 'nlc-prod'"
+  type        = string
+}
+variable "database_name" {
+  description = "What to call the 1st created db  - e.g. 'connect'"
   type        = string
 }
 
