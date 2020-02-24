@@ -34,6 +34,9 @@ variable "es_domain_name" {
   type = string
 }
 
+variable "es_version" {
+  type = string
+}
 
 variable "es_instance_type" {
   type = string

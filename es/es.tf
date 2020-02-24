@@ -42,7 +42,7 @@ module "es" {
   es_zone_awareness              = true
   es_zone_awareness_count        = 3
   ebs_volume_size                = 10
-  es_version                     = "7.1" 
+  es_version                     = var.es_version
   use_prefix                     = false 
 # sigh https://github.com/terraform-community-modules/tf_aws_elasticsearch/issues/42
 create_iam_service_linked_role = "false"
