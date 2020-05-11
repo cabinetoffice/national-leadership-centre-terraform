@@ -175,6 +175,7 @@ resource "aws_iam_policy" "ingressController-iam-policy" {
         {
             "Effect": "Allow",
             "Action": [
+                "cognito-idp:DescribeUserPoolClient",
                 "elasticloadbalancing:AddTags",
                 "elasticloadbalancing:AddListenerCertificates",
                 "elasticloadbalancing:CreateListener",
