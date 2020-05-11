@@ -1,8 +1,9 @@
 module "eks" {
-  # source       = "terraform-aws-modules/eks/aws"
-  source = "git@github.com:terraform-aws-modules/terraform-aws-eks.git"
+  source          = "terraform-aws-modules/eks/aws"
 
   cluster_name = var.cluster_name
+  cluster_version = var.cluster_version
+
   subnets      = var.public_subnets
   vpc_id       = var.vpc_id
   cluster_endpoint_private_access = true
@@ -16,6 +17,7 @@ module "eks" {
        instance_type = var.eks_worker_instance_type
        asg_max_size  = 6
        asg_min_size  = 3
+       ami_id = var.ami_id
        asg_desired_capacity = 3
        autoscaling_enabled = true
        # protect_from_scale_in         = true 

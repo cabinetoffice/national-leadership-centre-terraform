@@ -8,8 +8,18 @@ variable "cluster_name" {
  description = "The name the EKS cluster will have (e.g. nlc-prod)"
 }
 
+variable "cluster_version" {
+  type = string
+ description = "The version of k8s to deploy"
+}
+
 variable "vpc_id" {
   type = string
+}
+
+variable "ami_id" {
+  type = string
+  description = "AMI to use"
 }
 
 variable "eks_worker_instance_type" {
