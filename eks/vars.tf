@@ -28,13 +28,13 @@ variable "eks_worker_instance_type" {
 }
 
 variable "config_output_path" {
-   description = "Where to output generated kubeconfig file (e.g. /tmp)" 
+   description = "Where to output generated kubeconfig file (e.g. /tmp)"
    type = string
 }
 
 variable "write_kubeconfig" {
    description = "Whether to output generated kubeconfig file (e.g. .kubeconfig-my-cluster)"
-   type = string 
+   type = string
 }
 
 variable "private_subnets" {
@@ -76,7 +76,3 @@ variable "map_users" {
 
   default = []
 }
-
-
-
-

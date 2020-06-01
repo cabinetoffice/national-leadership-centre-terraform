@@ -1,5 +1,4 @@
-
-# sets up an ES domain for the drupal site to use 
+# sets up an ES domain for the drupal site to use
 
  resource "aws_security_group" "es_security_group" {
    name        = "es_security_group"
@@ -19,11 +18,10 @@
      protocol        = "-1"
      cidr_blocks     = ["0.0.0.0/0"]
    }
-  tags =  { 
+  tags =  {
        terraform_managed = "true"
    }
  }
-
 
 module "es" {
   source  = "git::https://github.com/terraform-community-modules/tf_aws_elasticsearch.git?ref=v1.2.0"
@@ -38,18 +36,16 @@ module "es" {
   dedicated_master_threshold     = var.es_dedicated_master_threshold
   # defaults to same as instance_type
   dedicated_master_type          = var.es_dedicated_master_type
- 
+
   es_zone_awareness              = true
   es_zone_awareness_count        = 3
   ebs_volume_size                = 10
   es_version                     = var.es_version
-  use_prefix                     = false 
+  use_prefix                     = false
 # sigh https://github.com/terraform-community-modules/tf_aws_elasticsearch/issues/42
 create_iam_service_linked_role = "false"
 
-  tags =  { 
+  tags =  {
        terraform_managed = "true"
    }
-
 }
-

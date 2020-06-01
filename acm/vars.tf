@@ -13,4 +13,3 @@ variable "aws_region" {
   description = "The AWS region to create the domains in (e.g. eu-west-2)"
   type        = string
 }
-

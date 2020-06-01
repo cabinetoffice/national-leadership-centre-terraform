@@ -1,4 +1,3 @@
-
 terraform {
   backend "s3" {}
 }
@@ -6,4 +5,3 @@ terraform {
 provider "aws" {
   region = var.aws_region
 }
-

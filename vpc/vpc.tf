@@ -34,7 +34,7 @@ module "vpc" {
 
   tags = {
     Terraform = "true"
-    # "kubernetes.io/cluster/${var.cluster_name}" = "shared" 
+    # "kubernetes.io/cluster/${var.cluster_name}" = "shared"
   }
 
 }

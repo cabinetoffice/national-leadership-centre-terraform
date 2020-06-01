@@ -20,7 +20,7 @@ module "eks" {
        ami_id = var.ami_id
        asg_desired_capacity = 3
        autoscaling_enabled = true
-       # protect_from_scale_in         = true 
+       # protect_from_scale_in         = true
       tags = [{
         key                 = "terraform_managed"
         value               = "true"
@@ -34,4 +34,3 @@ module "eks" {
   map_users                            = var.map_users
   map_accounts                         = var.map_accounts
 }
-

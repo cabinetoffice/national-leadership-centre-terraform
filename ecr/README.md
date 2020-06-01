@@ -1,1 +1,1 @@
-Create ecr repositories based on configs in the terragrnt parallel repo.
+Create ECR repositories based on configs in the terragrunt parallel repo.

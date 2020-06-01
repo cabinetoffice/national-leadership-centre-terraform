@@ -1,4 +1,3 @@
-
 # VPC
 output "vpc_id" {
   description = "The ID of the VPC"
@@ -56,9 +55,3 @@ output "vault_auto_unseal_key_arn" {
   description = "ARN for auto unseal KMS key"
   value       = "${aws_kms_key.vault-auto-unseal-key.arn}"
 }
-
-
-
-
-
-

@@ -1,4 +1,3 @@
-
 resource "aws_iam_policy" "semver-bucket-rw-access" {
   name        = "semver-bucket-rw-access"
   path        = "/"
@@ -33,7 +32,6 @@ resource "aws_iam_policy" "semver-bucket-rw-access" {
 }
 EOF
 }
-
 
 ## TODO - can we limit the s3:* here - although the drupal docs say use s3:* :(
 ## TODO - surely we can iterate here on buckets  ?
@@ -249,8 +247,6 @@ resource "aws_iam_policy" "ingressController-iam-policy" {
 EOF
 }
 
-
-
 resource "aws_iam_policy" "vault-ha-dynamodb-table-read-write" {
   name        = "vault-ha-dynamodb-table-read-write"
   path        = "/"
@@ -291,7 +287,7 @@ EOF
 
 }
 
-# NOTE - this will manually be used as part of the vault HA install in deployment - see tf outputs for value of key id 
+# NOTE - this will manually be used as part of the vault HA install in deployment - see tf outputs for value of key id
 
 resource "aws_kms_key" "vault-auto-unseal-key" {
   description = "Auto unseal key for the ha vault instance"
@@ -323,4 +319,3 @@ resource "aws_iam_policy" "kms-key-vault-usage" {
 }
 EOF
 }
-

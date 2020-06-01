@@ -7,6 +7,6 @@ variable "ecr_account_list" {
   type        = "list"
 }
 variable "aws_region" {
-  description = "region we are using "
+  description = "Region we are using "
   type        = "string"
 }

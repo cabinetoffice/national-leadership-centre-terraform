@@ -1,5 +1,4 @@
-
-# sets up an RDS instance for the drupal site to use 
+# sets up an RDS instance for the drupal site to use
 
 resource "aws_security_group" "db_security_group" {
   name        = "db_security_group"
@@ -23,7 +22,7 @@ resource "aws_security_group" "db_security_group" {
 
 #resource "aws_db_parameter_group" "with-log-bin-trust" {
 #  name   = "with-log-bin-trust"
-#  description = "for mysql log_bin_trust_function_creators" 
+#  description = "for mysql log_bin_trust_function_creators"
 #  family = "mysql5.7"
 #
 #  parameter {
@@ -106,5 +105,3 @@ module "db" {
     }
   ]
 }
-
-

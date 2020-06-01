@@ -1,16 +1,16 @@
-This creates a SG and RDS instance 
+This creates a SG and RDS instance
 
-The initial username and password are set in the vars file or on command line and later 
-can be added to vault when the cluster is up 
+The initial username and password are set in the vars file or on command line and later
+can be added to vault when the cluster is up.
 
-A new user should also be created with more limited permissions to just the connect db 
+A new user should also be created with more limited permissions to just the connect db.
 
 ```
-CREATE USER 'connect'@'%' IDENTIFIED BY 'A_NEW_PASSWORD'; 
+CREATE USER 'connect'@'%' IDENTIFIED BY 'A_NEW_PASSWORD';
 GRANT SELECT, INSERT, UPDATE, DELETE, CREATE, DROP, INDEX, ALTER, CREATE TEMPORARY TABLES ON connect;
 ```
 
-Then save the user and password into vault 
+Then save the user and password into vault
 
 ```
 12:46 $ VAULT_ADDR=https://localhost:8200/ VAULT_CACERT=ca.pem vault kv put secret/service/connect @vault-kv-write.json
@@ -22,7 +22,7 @@ destroyed        false
 version          3
 ```
 
-connect to the db via the drupal node 
+Connect to the db via the drupal node
 
 ```
 
@@ -46,6 +46,3 @@ MySQL [connect]> show databases;
 
 MySQL [connect]>
 ```
-
-
-

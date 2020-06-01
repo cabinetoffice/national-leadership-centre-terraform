@@ -27,7 +27,3 @@ output "kubeconfig_filename" {
   description = "Where the kubeconfig file is."
   value       = module.eks.kubeconfig_filename
 }
-
-
-
-

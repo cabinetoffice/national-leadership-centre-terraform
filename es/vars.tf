@@ -53,4 +53,3 @@ variable "es_dedicated_master_type" {
 variable "es_dedicated_master_threshold" {
   type = number
 }
-

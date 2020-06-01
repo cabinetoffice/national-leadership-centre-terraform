@@ -15,6 +15,5 @@ The following [registry.terraform.io](registry.terraform.io) modules are used:
     * 3 DB subnets (including a RDS Subnet Group) (`/26`)
 - Policies for the EKS nodes to access s3 and ES resources - TODO - these are not applied automatically, that should be done here but is not yet completed.
 
-
 [Security Group]: https://registry.terraform.io/modules/terraform-aws-modules/security-group/aws/1.15.0
 [VPC]: https://registry.terraform.io/modules/terraform-aws-modules/vpc/aws/1.23.0

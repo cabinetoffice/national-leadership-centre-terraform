@@ -2,7 +2,6 @@
 # Request ACM certs
 #
 
-
 #resource "aws_acm_certificate" "connect_staging_certificate" {
 #  domain_name       = var.connect_staging_domain_name
 #  validation_method = "DNS"
@@ -16,8 +15,6 @@
 #  }
 #}
 
-
-
 resource "aws_acm_certificate" "connect_production_certificate" {
   domain_name       = var.connect_production_domain_name
   validation_method = "DNS"
@@ -30,5 +27,3 @@ resource "aws_acm_certificate" "connect_production_certificate" {
     create_before_destroy = true
   }
 }
-
-

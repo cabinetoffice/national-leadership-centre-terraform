@@ -1,4 +1,3 @@
-
 resource "aws_s3_bucket" "semver_bucket" {
   bucket = var.semver_bucket_name
 
@@ -6,7 +5,6 @@ resource "aws_s3_bucket" "semver_bucket" {
     terraform_managed = "true"
   }
 }
-
 
 resource "aws_s3_bucket" "s3fs_bucket" {
   bucket = var.s3fs_bucket_name
@@ -23,5 +21,3 @@ resource "aws_s3_bucket" "s3fs_bucket_staging" {
     terraform_managed = "true"
   }
 }
-
-
